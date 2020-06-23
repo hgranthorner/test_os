@@ -10,7 +10,11 @@ edition = "2018"
 bootloader = "0.9"
 volatile = "0.2"
 spin = "*"
+x86_64 = "*"
 
 [dependencies.lazy_static]
 version = "*"
 features = ["spin_no_std"]
+
+[package.metadata.bootimage]
+test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04"]

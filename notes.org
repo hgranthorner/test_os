@@ -7,11 +7,10 @@ This project is following [[https://os.phil-opp.com/][this tutorial.]]
 ** Building
 To build, we need to use "xbuild", a crate installed from "cargo-xbuild".
 We will be automatically targeting our custom json file from configuration set in the ".cargo/config" file, so we simply need to use "xbuild" instead of build.
-(setq cargo-process--command-build "xbuild")
-
-Additionally, we have set our runner to use bootloader and bootimage.
+Additionally, we have set our runner to use bootloader and bootimage, and the xtester.
 (setq cargo-process--command-run "xrun")
-
+(setq cargo-process--command-build "xbuild")
+(setq cargo-process--command-test "xtest")
 ** Rust Nightly
 We will use rustup to install the nightly compiler. We will manage this by using
 "rustup override add nightly"
